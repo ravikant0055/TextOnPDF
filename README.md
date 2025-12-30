@@ -33,17 +33,11 @@ A powerful and user-friendly **PDF editor** built with **React.js** that allows 
 ## 🧩 How It Works
 
 1. Upload a PDF file
-
 2. Type text in the input field and press Enter
-
 3. Text appears in the draggable list
-
 4. Drag the text and drop it on the PDF
-
 5. Reposition text as needed
-
 6. Scroll the PDF — text stays aligned correctly
-
 7. Click Download PDF to save the final version
 
 ## 📂 Local Development
