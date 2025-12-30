@@ -1,5 +1,30 @@
 import React, { useState } from 'react'
 import { MdOutlineDeleteForever } from "react-icons/md";
+import { useDrag } from 'react-dnd'
+
+const ITEM_TYPE = 'TEXT_ITEM'
+
+const DraggableItem = ({ text, onDelete }) => {
+  const [{ isDragging }, drag] = useDrag(() => ({
+    type: ITEM_TYPE,
+    item: { text,onDelete },
+    collect: (monitor) => ({
+      isDragging: !!monitor.isDragging(),
+    }),
+  }))
+
+  return (
+    <div
+      ref={drag}
+      className={`flex items-center gap-2 ${isDragging ? 'opacity-50' : 'opacity-100'}`}
+    >
+      <div className="shadow px-2 py-1 rounded-md border w-full border-black/5 cursor-pointer">
+        <h1>{text}</h1>
+      </div>
+      <MdOutlineDeleteForever onClick={onDelete} className='text-red-500 text-2xl cursor-pointer'/>
+    </div>
+  )
+}
 
 const InputArea = () => {
   const [inputValue, setInputValue] = useState('')
@@ -36,12 +61,11 @@ const InputArea = () => {
           style={{ maxHeight: '400px', overflowY: 'auto' }}
         >
           {textList.map((text, index) => (
-            <div key={index} className='flex items-center gap-2'>
-              <div className="shadow px-2 py-1 rounded-md border w-full border-black/5 cursor-pointer">
-                <h1>{text}</h1>
-              </div>
-            <MdOutlineDeleteForever onClick={() => handleDelete(index)} className='text-red-500 text-2xl cursor-pointer'/>
-             </div>
+             <DraggableItem
+              key={index}
+              text={text}
+              onDelete={() => handleDelete(index)}
+            />
           ))}
         </div>
 
