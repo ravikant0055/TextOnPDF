@@ -1,16 +1,57 @@
-# React + Vite
+# 📄 PDF Text Drag & Drop Editor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A powerful and user-friendly **PDF editor** built with **React.js** that allows users to upload a PDF, add custom text, drag & drop it onto the PDF, reposition it freely, and finally **download the updated PDF** — all directly in the browser.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Technologies Used
 
-## React Compiler
+- ⚛️ **React.js** – UI library
+- 🧠 **JavaScript (ES6+)** – Core logic
+- 🎨 **Tailwind CSS** – Utility-first CSS framework
+- 🖐️ **react-dnd** – Drag & drop functionality
+- 📄 **pdf-lib** – Modify and export PDFs
+- 🧾 **react-pdf-viewer** – PDF rendering
+- 🔍 **React Icons** – Icons support
+- ⚡ **Vite** – Fast development & build tool
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 📤 **Upload PDF** – Select and preview any PDF file
+- ✍️ **Add Custom Text** – Type text and create a draggable list
+- 🖱️ **Drag & Drop Text** – Drop text anywhere on the PDF
+- 🔄 **Reposition Text** – Drag text again to adjust placement
+- 📍 **Scroll-Fixed Coordinates** – Text stays fixed relative to PDF while scrolling
+- 🗑️ **Auto Remove on Drop** – Text is removed from the list once placed on PDF
+- 📥 **Download PDF** – Export the final PDF with added text
+- 🧼 **Clean UI** – Split layout with editor on right and PDF on left
+
+---
+
+## 🧩 How It Works
+
+1. Upload a PDF file
+
+2. Type text in the input field and press Enter
+
+3. Text appears in the draggable list
+
+4. Drag the text and drop it on the PDF
+
+5. Reposition text as needed
+
+6. Scroll the PDF — text stays aligned correctly
+
+7. Click Download PDF to save the final version
+
+## 📂 Local Development
+
+### 🔧 Getting Started
+
+```bash
+git clone https://github.com/ravikant0055/TextOnPDF.git
+cd TextOnPDF
+npm install
+npm start
